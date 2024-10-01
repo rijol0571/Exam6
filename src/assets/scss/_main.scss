@@ -1,0 +1,283 @@
+@import 'variables';
+@import 'mixins';
+
+main {
+  .container {
+    margin: 0 auto; /* Markazlash */
+    padding: 2rem; /* Yana margin qo'shish */
+    text-align: center; /* Matnni markazga joylash */
+
+    h2 {
+      font-size: 2rem; /* O'lchov */
+      margin-bottom: 1rem; /* Boshqalar orasidagi bo'shliq */
+    }
+
+    p {
+      margin: 1rem 0; /* Yuqoridan pastga bo'shliq */
+      line-height: 1.5; /* Qator oralig'i */
+    }
+
+    button {
+      background-color: $primary-color; /* Asosiy rang */
+      color: white;
+      padding: 0.5rem 1rem; /* Yuqoridan pastga va chapdan o'ngga bo'shliq */
+      border: none;
+      border-radius: 0.375rem; /* Burchaklarni yumshatish */
+      cursor: pointer;
+      margin: 0.5rem; /* Tugmalar orasidagi bo'shliq */
+
+      &:hover {
+        background-color: darken($primary-color, 10%); /* Hover holati */
+      }
+    }
+
+    img {
+      margin-top: 1rem; /* Yuqoridan pastga bo'shliq */
+      max-width: 100%; /* Tasvirlarni to'liq ko'rsatish */
+      height: auto; /* O'lchamlarni saqlash */
+    }
+  }
+
+  .projects-section {
+    margin: 2rem 0; /* Yuqoridan pastga bo'shliq */
+    text-align: center; /* Matnni markazga joylash */
+
+    h2 {
+      font-size: 1.5rem; /* O'lchov */
+      margin-bottom: 1rem; /* Boshqalar orasidagi bo'shliq */
+    }
+
+    p {
+      margin-bottom: 1rem; /* Boshqalar orasidagi bo'shliq */
+    }
+
+    img {
+      margin: 0.5rem; /* Tasvirlar orasidagi bo'shliq */
+      max-width: calc(33% - 1rem); /* 3ta tasvir yonma-yon */
+      height: auto;
+    }
+  }
+
+  .features-section {
+    padding: 2rem; /* Yuqoridan pastga bo'shliq */
+    background-color: lighten($primary-color, 40%); /* Orqa fon rangini o'zgartirish */
+
+    p {
+      font-size: 1.25rem; /* O'lchov */
+      text-align: center; /* Matnni markazga joylash */
+    }
+
+    h3 {
+      font-size: 1.75rem; /* O'lchov */
+      margin: 1rem 0; /* Boshqalar orasidagi bo'shliq */
+      text-align: center; /* Matnni markazga joylash */
+    }
+
+    .feature {
+      margin: 1rem 0; /* Yuqoridan pastga bo'shliq */
+      display: flex; /* Flexbox */
+      align-items: center; /* Vertikal markazlash */
+      justify-content: center; /* Gorizontal markazlash */
+      text-align: left; /* Chapga joylash */
+
+      img {
+        margin-right: 0.5rem; /* Chapdan o'ngga bo'shliq */
+        height: 40px; /* O'lchov */
+        width: 40px; /* O'lchov */
+      }
+
+      p {
+        margin: 0.25rem 0; /* Yuqoridan pastga bo'shliq */
+      }
+    }
+  }
+
+  .client-feedback {
+    padding: 2rem; /* Yuqoridan pastga bo'shliq */
+    background-color: $secondary-color; /* Orqa fon rangini o'zgartirish */
+    color: white;
+
+    h4 {
+      font-size: 1.5rem; /* O'lchov */
+      margin-bottom: 1rem; /* Boshqalar orasidagi bo'shliq */
+      text-align: center; /* Matnni markazga joylash */
+    }
+
+    blockquote {
+      font-style: italic; /* Ta'rif stilini o'zgartirish */
+      margin: 1rem 0; /* Yuqoridan pastga bo'shliq */
+      padding: 1rem; /* Ichki bo'shliq */
+      border-left: 4px solid white; /* Chapdan chiziq qo'shish */
+
+      div {
+        display: flex; /* Flexbox */
+        align-items: center; /* Vertikal markazlash */
+        justify-content: center; /* Gorizontal markazlash */
+
+        img {
+          margin-right: 0.5rem; /* Chapdan o'ngga bo'shliq */
+          border-radius: 50%; /* Dumaloq rasm */
+          height: 50px; /* O'lchov */
+          width: 50px; /* O'lchov */
+        }
+
+        p {
+          margin: 0; /* Boshqalar orasidagi bo'shliq yo'q */
+          text-align: center; /* Matnni markazga joylash */
+        }
+
+        button {
+          background-color: transparent; /* Shaffof fon */
+          color: white; /* Oq rang */
+          border: none; /* Chegara yo'q */
+          cursor: pointer; /* Kursor ko'rsatkichini o'zgartirish */
+          margin: 0 0.25rem; /* Tugmalar orasidagi bo'shliq */
+        }
+      }
+    }
+  }
+}
+
+@include respond-to(sm) {
+  main {
+    font-size: $font-size-small; /* Kichik ekranlar uchun o'lchov */
+  }
+}
+
+@include respond-to(md) {
+  main {
+    font-size: $font-size-base; /* O'rta ekranlar uchun o'lchov */
+  }
+}
+
+@include respond-to(lg) {
+  main {
+    font-size: $font-size-large; /* Katta ekranlar uchun o'lchov */
+  }
+}
+
+.header {
+  background-color: $primary-color; 
+  padding: 16px; 
+
+  .container {
+    @include flex-center;
+    max-width: 1200px; 
+    margin: 0 auto;
+
+    .title {
+      font-size: 1.875rem;
+      font-weight: bold;
+    }
+
+    nav {
+      margin-top: 8px; 
+
+      .nav-list {
+        display: flex; /* @apply flex */
+        gap: 1rem; /* space-x-4 */
+        list-style: none;
+        padding: 0; 
+        margin: 0; 
+
+        .nav-link {
+          &:hover {
+            color: gray; /* hover:text-gray-400 */
+          }
+        }
+
+        .contact-button {
+          &:hover {
+            color: gray; /* hover:text-gray-400 */
+          }
+          border: none; 
+          background: none; 
+          cursor: pointer; 
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  background-color: $primary-color; 
+  color: white;
+  padding: 20px;
+  margin-top: 16px;
+
+  .container {
+    @include flex-center; 
+    justify-content: space-between; 
+    max-width: 1200px; 
+    margin: 0 auto;
+
+    .left {
+      width: 50%; 
+      
+      h2 {
+        font-size: 1.125rem; 
+        font-weight: 600; 
+      }
+
+      p {
+        margin-top: 8px; 
+      }
+
+      img {
+        margin-top: 8px;
+      }
+    }
+
+    .right {
+      width: 50%;
+      text-align: right; 
+
+      h3 {
+        font-size: 1.125rem; 
+        font-weight: 600;
+      }
+
+      p {
+        margin-top: 8px; 
+      }
+
+      .social-icons {
+        display: flex; 
+        justify-content: flex-end;
+        margin-top: 8px;
+        gap: 8px;
+
+        .icon {
+          height: 24px; 
+          width: 24px; 
+        }
+      }
+    }
+  }
+}
+
+.container {
+  margin: 0 auto; /* mx-auto */
+  padding: 1rem; /* p-4 */
+
+  .title {
+    font-size: 1.875rem; /* text-3xl */
+    font-weight: bold; /* font-bold */
+    margin-bottom: 1rem; /* mb-4 */
+  }
+
+  .content {
+    margin-bottom: 1rem; /* mb-4 */
+  }
+
+  .contact-button {
+    background-color: blue; /* bg-blue-500 */
+    color: white; /* text-white */
+    padding: 0.5rem 1rem; /* px-4 py-2 */
+    border-radius: 0.375rem; /* rounded */
+    
+    &:hover {
+      background-color: darkblue; /* hover:bg-blue-600 */
+    }
+  }
+}
